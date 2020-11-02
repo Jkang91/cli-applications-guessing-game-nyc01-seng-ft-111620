@@ -1,8 +1,13 @@
 def run_guessing_game
-  puts "Guess between 1 and 6"
-  input = gets() 
-  rand_num = rand(1..6)
-
+  input = gets.chomp
+  rand_num = rand(1...6)
+  if input == "exit" 
+    puts "Goodbye!"
+  elsif input.to_i == rand_num 
+    puts "You guessed the correct number!"
+  elsif input.to_i != rand_num 
+    puts "Sorry! The computer guessed #{rand_num}." 
+  else
+    puts "Invalid input"
   end
 end
-  
